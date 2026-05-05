@@ -63,7 +63,8 @@ public class XpBook extends Item {
 
     @Override
     public int getBarColor(ItemStack stack) {
-        return stack.getOrDefault(MyComponents.BOOK_COMPONENT, BookData.getDefault()).barColor();
+        int level = getBookLevel(stack);
+        return ModConfig.get().books.getTier(level).barColor;
     }
 
     @Override
@@ -121,7 +122,8 @@ public class XpBook extends Item {
     }
 
     public static int getMaxXpLevel(ItemStack stack) {
-        return stack.getOrDefault(MyComponents.BOOK_COMPONENT, BookData.getDefault()).capacity();
+        int level = getBookLevel(stack);
+        return ModConfig.get().books.getTier(level).capacity;
     }
 
     public static int getMaxXpAmount(ItemStack stack) {
@@ -129,10 +131,12 @@ public class XpBook extends Item {
     }
 
     public static int getXpFromUsing(ItemStack stack) {
-        return stack.getOrDefault(MyComponents.BOOK_COMPONENT, BookData.getDefault()).xpFromUsing();
+        int level = getBookLevel(stack);
+        return ModConfig.get().books.getTier(level).xpFromUsing.get();
     }
 
     public static int getXpFromBrewing(ItemStack stack) {
-        return stack.getOrDefault(MyComponents.BOOK_COMPONENT, BookData.getDefault()).xpFromBrewing();
+        int level = getBookLevel(stack);
+        return ModConfig.get().books.getTier(level).xpFromBrewing.get();
     }
 }
