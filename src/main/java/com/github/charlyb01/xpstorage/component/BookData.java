@@ -15,9 +15,9 @@ public record BookData(int level, int capacity, int xpFromUsing, int xpFromBrewi
 
     public static BookData getDefault() {
         return new BookData(0,
-                ModConfig.get().books.capacity,
-                ModConfig.get().books.xpFromUsing,
-                ModConfig.get().books.xpFromBrewing,
-                ModConfig.get().books.barColor);
+                ModConfig.get().books.getTier(0).capacity,
+                ModConfig.get().books.getTier(0).xpFromUsing.get(),
+                ModConfig.get().books.getTier(0).xpFromBrewing.get(),
+                ModConfig.get().books.getTier(0).barColor);
     }
 }
