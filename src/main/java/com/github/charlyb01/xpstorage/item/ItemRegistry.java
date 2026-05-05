@@ -64,9 +64,21 @@ public class ItemRegistry {
             .icon(() -> new ItemStack(XP_BOOK))
             .displayItems((parameters, output) -> {
                 output.accept(CRYSTALLIZED_LAPIS);
+                
                 output.accept(XP_BOOK);
-                output.accept(XP_BOOK2);
-                output.accept(XP_BOOK3);
+
+                ItemStack bookLevel1 = new ItemStack(XP_BOOK);
+                bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(1, 30, 90, 3, 10615784));
+                output.accept(bookLevel1);
+
+                ItemStack bookLevel2 = new ItemStack(XP_BOOK);
+                bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(2, 50, 95, 5, 5920602));
+                output.accept(bookLevel2);
+
+                ItemStack bookLevel3 = new ItemStack(XP_BOOK);
+                bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(3, 100, 100, 10, 14738039));
+                output.accept(bookLevel3);
+
                 output.accept(XP_BOOK_UPGRADE);
             })
             .build()
@@ -76,7 +88,20 @@ public class ItemRegistry {
             output.insertAfter(Items.LAPIS_LAZULI, CRYSTALLIZED_LAPIS);
             output.insertAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, XP_BOOK_UPGRADE);
         });
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output ->
-                output.insertAfter(Items.WRITABLE_BOOK, XP_BOOK));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
+            output.insertAfter(Items.WRITABLE_BOOK, XP_BOOK);
+            
+            ItemStack bookLevel1 = new ItemStack(XP_BOOK);
+            bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(1, 30, 90, 3, 10615784));
+            output.insertAfter(new ItemStack(XP_BOOK), bookLevel1);
+            
+            ItemStack bookLevel2 = new ItemStack(XP_BOOK);
+            bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(2, 50, 95, 5, 5920602));
+            output.insertAfter(bookLevel1, bookLevel2);
+            
+            ItemStack bookLevel3 = new ItemStack(XP_BOOK);
+            bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(3, 100, 100, 10, 14738039));
+            output.insertAfter(bookLevel2, bookLevel3);
+        });
     }
 }
