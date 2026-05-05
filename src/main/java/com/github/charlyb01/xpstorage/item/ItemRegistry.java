@@ -2,7 +2,6 @@ package com.github.charlyb01.xpstorage.item;
 
 import com.github.charlyb01.xpstorage.XpStorage;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
@@ -60,7 +59,7 @@ public class ItemRegistry {
         Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book2"), XP_BOOK2);
         Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book3"), XP_BOOK3);
 
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, XP_STORAGE_TAB_KEY, FabricItemGroup.builder()
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, XP_STORAGE_TAB_KEY, CreativeModeTab.builder(CreativeModeTab.Row.TOP, 6)
             .title(Component.translatable("itemGroup.xp_storage"))
             .icon(() -> new ItemStack(XP_BOOK))
             .displayItems((parameters, output) -> {
