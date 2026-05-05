@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": "minecraft:book",
+    "c": "xp_storage:crystallized_lapis"
+  },
+  "pattern": [
+    " c ",
+    "cbc",
+    " c "
+  ],
+  "result": {
+    "count": 1,
+    "id": "xp_storage:xp_book"
+  }
+}
