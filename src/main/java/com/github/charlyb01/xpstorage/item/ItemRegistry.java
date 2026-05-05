@@ -2,13 +2,18 @@ package com.github.charlyb01.xpstorage.item;
 
 import com.github.charlyb01.xpstorage.XpStorage;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SmithingTemplateItem;
 
@@ -31,6 +36,8 @@ public class ItemRegistry {
             "item.xp_storage.smithing_template.xp_book_upgrade.additions_slot_description"
     );
 
+    public static final ResourceKey<CreativeModeTab> XP_STORAGE_TAB_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, XpStorage.id("xp_storage_tab"));
+
     public static final Item CRYSTALLIZED_LAPIS = new Item(new Item.Properties().setId(ItemKeys.CRYSTALLIZED_LAPIS_KEY));
     public static final SmithingTemplateItem XP_BOOK_UPGRADE = new SmithingTemplateItem(
             XP_BOOK_UPGRADE_APPLIES_TO_TEXT,
@@ -52,6 +59,19 @@ public class ItemRegistry {
         Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book"), XP_BOOK);
         Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book2"), XP_BOOK2);
         Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book3"), XP_BOOK3);
+
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, XP_STORAGE_TAB_KEY, FabricItemGroup.builder()
+            .title(Component.translatable("itemGroup.xp_storage"))
+            .icon(() -> new ItemStack(XP_BOOK))
+            .displayItems((parameters, output) -> {
+                output.accept(CRYSTALLIZED_LAPIS);
+                output.accept(XP_BOOK);
+                output.accept(XP_BOOK2);
+                output.accept(XP_BOOK3);
+                output.accept(XP_BOOK_UPGRADE);
+            })
+            .build()
+        );
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.insertAfter(Items.LAPIS_LAZULI, CRYSTALLIZED_LAPIS);
