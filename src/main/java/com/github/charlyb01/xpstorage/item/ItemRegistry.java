@@ -19,89 +19,97 @@ import net.minecraft.world.item.SmithingTemplateItem;
 import java.util.List;
 
 public class ItemRegistry {
-    private static final ChatFormatting DESCRIPTION_FORMATTING = ChatFormatting.BLUE;
-    private static final Component XP_BOOK_UPGRADE_APPLIES_TO_TEXT = Component.translatable(
-                    "item.xp_storage.smithing_template.xp_book_upgrade.applies_to"
-            )
-            .withStyle(DESCRIPTION_FORMATTING);
-    private static final Component XP_BOOK_UPGRADE_INGREDIENTS_TEXT = Component.translatable(
-                    "item.xp_storage.smithing_template.xp_book_upgrade.ingredients"
-            )
-            .withStyle(DESCRIPTION_FORMATTING);
-    private static final Component XP_BOOK_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Component.translatable(
-            "item.xp_storage.smithing_template.xp_book_upgrade.base_slot_description"
-    );
-    private static final Component XP_BOOK_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Component.translatable(
-            "item.xp_storage.smithing_template.xp_book_upgrade.additions_slot_description"
-    );
+        private static final ChatFormatting DESCRIPTION_FORMATTING = ChatFormatting.BLUE;
+        private static final Component XP_BOOK_UPGRADE_APPLIES_TO_TEXT = Component.translatable(
+                        "item.xp_storage.smithing_template.xp_book_upgrade.applies_to")
+                        .withStyle(DESCRIPTION_FORMATTING);
+        private static final Component XP_BOOK_UPGRADE_INGREDIENTS_TEXT = Component.translatable(
+                        "item.xp_storage.smithing_template.xp_book_upgrade.ingredients")
+                        .withStyle(DESCRIPTION_FORMATTING);
+        private static final Component XP_BOOK_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Component.translatable(
+                        "item.xp_storage.smithing_template.xp_book_upgrade.base_slot_description");
+        private static final Component XP_BOOK_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Component.translatable(
+                        "item.xp_storage.smithing_template.xp_book_upgrade.additions_slot_description");
 
-    public static final ResourceKey<CreativeModeTab> XP_STORAGE_TAB_KEY = ResourceKey.create(Registries.CREATIVE_MODE_TAB, XpStorage.id("xp_storage_tab"));
+        public static final ResourceKey<CreativeModeTab> XP_STORAGE_TAB_KEY = ResourceKey
+                        .create(Registries.CREATIVE_MODE_TAB, XpStorage.id("xp_storage_tab"));
 
-    public static final Item CRYSTALLIZED_LAPIS = new Item(new Item.Properties().setId(ItemKeys.CRYSTALLIZED_LAPIS_KEY));
-    public static final SmithingTemplateItem XP_BOOK_UPGRADE = new SmithingTemplateItem(
-            XP_BOOK_UPGRADE_APPLIES_TO_TEXT,
-            XP_BOOK_UPGRADE_INGREDIENTS_TEXT,
-            XP_BOOK_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT,
-            XP_BOOK_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT,
-            List.of(XpStorage.id("container/slot/book")),
-            List.of(Identifier.withDefaultNamespace("container/slot/diamond"),
-                    Identifier.withDefaultNamespace("container/slot/ingot")),
-            new Item.Properties().setId(ItemKeys.XP_BOOK_UPGRADE_KEY)
-    );
-    public static final XpBook XP_BOOK = new XpBook(new Item.Properties().setId(ItemKeys.XP_BOOK_KEY));
-    public static final Item XP_BOOK2 = new Item(new Item.Properties().setId(ItemKeys.XP_BOOK2_KEY));
-    public static final Item XP_BOOK3 = new Item(new Item.Properties().setId(ItemKeys.XP_BOOK3_KEY));
+        public static final Item CRYSTALLIZED_LAPIS = new Item(
+                        new Item.Properties().setId(ItemKeys.CRYSTALLIZED_LAPIS_KEY));
+        public static final SmithingTemplateItem XP_BOOK_UPGRADE = new SmithingTemplateItem(
+                        XP_BOOK_UPGRADE_APPLIES_TO_TEXT,
+                        XP_BOOK_UPGRADE_INGREDIENTS_TEXT,
+                        XP_BOOK_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT,
+                        XP_BOOK_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT,
+                        List.of(XpStorage.id("container/slot/book")),
+                        List.of(Identifier.withDefaultNamespace("container/slot/diamond"),
+                                        Identifier.withDefaultNamespace("container/slot/ingot")),
+                        new Item.Properties().setId(ItemKeys.XP_BOOK_UPGRADE_KEY));
+        public static final XpBook XP_BOOK = new XpBook(new Item.Properties().setId(ItemKeys.XP_BOOK_KEY));
+        public static final Item XP_BOOK2 = new Item(new Item.Properties().setId(ItemKeys.XP_BOOK2_KEY));
+        public static final Item XP_BOOK3 = new Item(new Item.Properties().setId(ItemKeys.XP_BOOK3_KEY));
 
-    public static void init() {
-        Registry.register(BuiltInRegistries.ITEM, XpStorage.id("crystallized_lapis"), CRYSTALLIZED_LAPIS);
-        Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book_upgrade_smithing_template"), XP_BOOK_UPGRADE);
-        Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book"), XP_BOOK);
-        Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book2"), XP_BOOK2);
-        Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book3"), XP_BOOK3);
+        public static void init() {
+                Registry.register(BuiltInRegistries.ITEM, XpStorage.id("crystallized_lapis"), CRYSTALLIZED_LAPIS);
+                Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book_upgrade_smithing_template"),
+                                XP_BOOK_UPGRADE);
+                Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book"), XP_BOOK);
+                Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book2"), XP_BOOK2);
+                Registry.register(BuiltInRegistries.ITEM, XpStorage.id("xp_book3"), XP_BOOK3);
 
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, XP_STORAGE_TAB_KEY, CreativeModeTab.builder(CreativeModeTab.Row.TOP, 6)
-            .title(Component.translatable("itemGroup.xp_storage"))
-            .icon(() -> new ItemStack(XP_BOOK))
-            .displayItems((parameters, output) -> {
-                output.accept(CRYSTALLIZED_LAPIS);
-                
-                output.accept(XP_BOOK);
+                Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, XP_STORAGE_TAB_KEY,
+                                CreativeModeTab.builder(CreativeModeTab.Row.TOP, 6)
+                                                .title(Component.translatable("itemGroup.xp_storage"))
+                                                .icon(() -> new ItemStack(XP_BOOK))
+                                                .displayItems((parameters, output) -> {
+                                                        output.accept(CRYSTALLIZED_LAPIS);
 
-                ItemStack bookLevel1 = new ItemStack(XP_BOOK);
-                bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(1, 30, 90, 3, 10615784));
-                output.accept(bookLevel1);
+                                                        output.accept(XP_BOOK);
 
-                ItemStack bookLevel2 = new ItemStack(XP_BOOK);
-                bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(2, 50, 95, 5, 5920602));
-                output.accept(bookLevel2);
+                                                        ItemStack bookLevel1 = new ItemStack(XP_BOOK);
+                                                        bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                                                        new com.github.charlyb01.xpstorage.component.BookData(
+                                                                                        1, 30, 90, 3, 10615784));
+                                                        output.accept(bookLevel1);
 
-                ItemStack bookLevel3 = new ItemStack(XP_BOOK);
-                bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(3, 100, 100, 10, 14738039));
-                output.accept(bookLevel3);
+                                                        ItemStack bookLevel2 = new ItemStack(XP_BOOK);
+                                                        bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                                                        new com.github.charlyb01.xpstorage.component.BookData(
+                                                                                        2, 50, 95, 5, 5920602));
+                                                        output.accept(bookLevel2);
 
-                output.accept(XP_BOOK_UPGRADE);
-            })
-            .build()
-        );
+                                                        ItemStack bookLevel3 = new ItemStack(XP_BOOK);
+                                                        bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                                                        new com.github.charlyb01.xpstorage.component.BookData(
+                                                                                        3, 100, 100, 10, 14738039));
+                                                        output.accept(bookLevel3);
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.insertAfter(Items.LAPIS_LAZULI, CRYSTALLIZED_LAPIS);
-            output.insertAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, XP_BOOK_UPGRADE);
-        });
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
-            output.insertAfter(Items.WRITABLE_BOOK, XP_BOOK);
-            
-            ItemStack bookLevel1 = new ItemStack(XP_BOOK);
-            bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(1, 30, 90, 3, 10615784));
-            output.insertAfter(new ItemStack(XP_BOOK), bookLevel1);
-            
-            ItemStack bookLevel2 = new ItemStack(XP_BOOK);
-            bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(2, 50, 95, 5, 5920602));
-            output.insertAfter(bookLevel1, bookLevel2);
-            
-            ItemStack bookLevel3 = new ItemStack(XP_BOOK);
-            bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT, new com.github.charlyb01.xpstorage.component.BookData(3, 100, 100, 10, 14738039));
-            output.insertAfter(bookLevel2, bookLevel3);
-        });
-    }
+                                                        output.accept(XP_BOOK_UPGRADE);
+                                                })
+                                                .build());
+
+                CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
+                        output.insertAfter(Items.LAPIS_LAZULI, CRYSTALLIZED_LAPIS);
+                        output.insertAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, XP_BOOK_UPGRADE);
+                });
+                CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
+                        output.insertAfter(Items.WRITABLE_BOOK, XP_BOOK);
+
+                        ItemStack bookLevel1 = new ItemStack(XP_BOOK);
+                        bookLevel1.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                        new com.github.charlyb01.xpstorage.component.BookData(1, 30, 90, 3, 10615784));
+                        output.insertAfter(new ItemStack(XP_BOOK), bookLevel1);
+
+                        ItemStack bookLevel2 = new ItemStack(XP_BOOK);
+                        bookLevel2.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                        new com.github.charlyb01.xpstorage.component.BookData(2, 50, 95, 5, 5920602));
+                        output.insertAfter(bookLevel1, bookLevel2);
+
+                        ItemStack bookLevel3 = new ItemStack(XP_BOOK);
+                        bookLevel3.set(com.github.charlyb01.xpstorage.component.MyComponents.BOOK_COMPONENT,
+                                        new com.github.charlyb01.xpstorage.component.BookData(3, 100, 100, 10,
+                                                        14738039));
+                        output.insertAfter(bookLevel2, bookLevel3);
+                });
+        }
 }
