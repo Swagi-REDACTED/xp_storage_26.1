@@ -1,4 +1,5 @@
 {
+  "itemGroup.xp_storage": "XP Storage",
   "item.xp_storage.crystallized_lapis": "Crystallized Lapis",
   "item.xp_storage.xp_book_upgrade_smithing_template": "XP Book Upgrade",
   "item.xp_storage.smithing_template.xp_book_upgrade.additions_slot_description": "Add diamond, netherite ingot or nether star",
