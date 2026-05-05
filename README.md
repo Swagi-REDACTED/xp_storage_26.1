@@ -1,6 +1,6 @@
 # XP Storage
 
-A mod that lets you store your experience in multiple ways!
+A mod that lets you store your experience in multiple ways! Ported to 26.1!
 
 Based on [XP Tome](https://www.curseforge.com/minecraft/mc-mods/xp-tome) (itself based on 
 [XP Book](https://www.curseforge.com/minecraft/mc-mods/xp-book)). Not a port from Forge! This mod is fully rewritten 
