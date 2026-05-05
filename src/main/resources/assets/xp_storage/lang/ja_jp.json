@@ -1,0 +1,23 @@
+{
+  "item.xp_storage.crystallized_lapis": "結晶化ラピスラズリ",
+  "item.xp_storage.xp_book": "経験値の本",
+  "item.xp_storage.xp_book2": "経験値の本 II",
+  "item.xp_storage.xp_book3": "経験値の本 III",
+  "item.xp_storage.xp_book.tooltip.level": "%2$s中%1$sレベルを保存中",
+  "item.xp_storage.xp_bottle.tooltip.level": "%1$sレベルを保存中",
+
+  "text.autoconfig.xp_storage.title": "XP Storage構成",
+
+  "text.autoconfig.xp_storage.category.books": "経験値の本",
+  "text.autoconfig.xp_storage.option.books.capacity": "容量（レベル）",
+  "text.autoconfig.xp_storage.option.books.xpFromUsing": "経験値の還元率 (%)",
+  "text.autoconfig.xp_storage.option.books.xpFromBrewing": "1瓶あたりの経験値増加量",
+  "text.autoconfig.xp_storage.option.books.barColor": "のゲージ色",
+
+  "text.autoconfig.xp_storage.category.bottles": "エンチャントの瓶",
+  "text.autoconfig.xp_storage.option.bottles.enableBrewing": "経験値を醸造可能",
+  "text.autoconfig.xp_storage.option.bottles.maxLevel": "容量（レベル）",
+
+  "text.autoconfig.xp_storage.category.cosmetic": "外観",
+  "text.autoconfig.xp_storage.option.cosmetic.glint": "経験値の本に揺らめく光が表示されるようになるレベルの割合 (%)"
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "xp_storage:netherite_ingot_xp_book_upgrade"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_xp_book_upgrade_ingredient": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:netherite_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_xp_book_upgrade_ingredient"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "xp_storage:netherite_ingot_xp_book_upgrade"
+    ]
+  }
+}

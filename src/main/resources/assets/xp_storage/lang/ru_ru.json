@@ -1,0 +1,24 @@
+{
+  "item.xp_storage.crystallized_lapis": "Crystallized Lapis",
+  "item.xp_storage.xp_book": "Книга опыта I",
+  "item.xp_storage.xp_book2": "Книга опыта II",
+  "item.xp_storage.xp_book3": "Книга опыта III",
+  "item.xp_storage.xp_book.tooltip.level": "%1$s / %2$s уровней опыта",
+  "item.xp_storage.xp_bottle.tooltip.level": "%1$s уровней опыта",
+
+  "text.autoconfig.xp_storage.title": "Настройка Книги опыта",
+
+  "text.autoconfig.xp_storage.category.books": "Книги",
+  "text.autoconfig.xp_storage.option.books.capacity": "Вместимость (lvl)",
+  "text.autoconfig.xp_storage.option.books.xpFromUsing": "Опыт, извлеченный от использования (%)",
+  "text.autoconfig.xp_storage.option.books.barColor": "Цветная полоса",
+
+  "text.autoconfig.xp_storage.category.bottles": "Бутылки",
+  "text.autoconfig.xp_storage.option.bottles.enableBrewing": "Включить опыт варки",
+  "text.autoconfig.xp_storage.option.bottles.maxLevel": "Вместимость (lvl)",
+
+  "text.autoconfig.xp_storage.category.cosmetic": "Косметические эффекты",
+  "text.autoconfig.xp_storage.option.cosmetic.bookTooltip": "Книги отображают накопленный опыт",
+  "text.autoconfig.xp_storage.option.cosmetic.bottleTooltip": "Бутылки отображают свой статус",
+  "text.autoconfig.xp_storage.option.cosmetic.glint": "Книги начинают блестеть (%)"
+}
