@@ -22,4 +22,9 @@ public class ModConfig extends me.fzzyhmstrs.fzzy_config.config.Config {
         }
         return instance;
     }
+
+    @Override
+    public int defaultPermLevel() {
+        return 2;
+    }
 }
